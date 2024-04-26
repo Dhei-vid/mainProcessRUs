@@ -3,6 +3,11 @@
 
 .btn {
   padding: 10px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background-color: brown;
 }
 
 .btnContainer {

@@ -52,11 +52,14 @@ const Task1 = () => {
       <h2>Task 1</h2>
       <input
         type="text"
+        className="inputItem"
         placeholder="Add new task"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
       />
-      <button onClick={addTask}>Add</button>
+      <button className={"btn"} onClick={addTask}>
+        Add
+      </button>
 
       <div>
         {tasks.map((task) => (
@@ -65,6 +68,7 @@ const Task1 = () => {
               <>
                 <input
                   type="text"
+                  className="inputItem"
                   value={editedTaskText}
                   onChange={(e) => setEditedTaskText(e.target.value)}
                 />
@@ -81,7 +85,10 @@ const Task1 = () => {
                 >
                   Edit
                 </button>
-                <button className={"btn"} onClick={() => deleteTask(task.id)}>
+                <button
+                  className={"btn deleteBtn"}
+                  onClick={() => deleteTask(task.id)}
+                >
                   Delete
                 </button>
               </div>
