@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import "./tasks-styles.css";
 
 const todoTasks = [
   {
@@ -47,7 +48,7 @@ const Task1 = () => {
   };
 
   return (
-    <div>
+    <div className=".task1">
       <h2>Task 1</h2>
       <input
         type="text"
@@ -59,7 +60,7 @@ const Task1 = () => {
 
       <div>
         {tasks.map((task) => (
-          <div key={task.id}>
+          <div className="todoItemsContainer" key={task.id}>
             {editingTaskId === task.id ? (
               <>
                 <input
@@ -67,14 +68,23 @@ const Task1 = () => {
                   value={editedTaskText}
                   onChange={(e) => setEditedTaskText(e.target.value)}
                 />
-                <button onClick={() => updateTask(task.id)}>Update</button>
+                <button className={"btn"} onClick={() => updateTask(task.id)}>
+                  Update
+                </button>
               </>
             ) : (
-              <>
+              <div className="btnContainer">
                 {task.title}
-                <button onClick={() => setEditingTaskId(task.id)}>Edit</button>
-                <button onClick={() => deleteTask(task.id)}>Delete</button>
-              </>
+                <button
+                  className={"btn"}
+                  onClick={() => setEditingTaskId(task.id)}
+                >
+                  Edit
+                </button>
+                <button className={"btn"} onClick={() => deleteTask(task.id)}>
+                  Delete
+                </button>
+              </div>
             )}
           </div>
         ))}

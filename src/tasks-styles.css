@@ -1,0 +1,25 @@
+.task1 {
+}
+
+.btn {
+  padding: 10px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.inputItem {
+  padding: 10px;
+}
+
+.todoItemsContainer {
+  margin: 15px;
+}
+
+.task2 {
+}
