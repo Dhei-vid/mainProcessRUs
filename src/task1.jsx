@@ -60,7 +60,6 @@ const Task1 = () => {
       <div>
         {tasks.map((task) => (
           <div key={task.id}>
-            <div>{task.title}</div>
             {editingTaskId === task.id ? (
               <>
                 <input
