@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 const ItemList = () => {
   const [items, setItems] = useState([]);
 
+  // Added the Items dependency
+  // Tried running just the link in the browser but it was not opening
   useEffect(() => {
     fetch("https://api.example.com/items")
       .then((response) => response.json())
