@@ -57,7 +57,7 @@ const Task1 = () => {
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
       />
-      <button className={"btn"} onClick={addTask}>
+      <button className={"btn addBtn"} onClick={addTask}>
         Add
       </button>
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./tasks-styles.css";
 
 const ItemList = () => {
   const [countries, setCountries] = useState([]);
@@ -18,7 +19,9 @@ const ItemList = () => {
       <h2>Country List</h2>
       <div>
         {countries.map((item) => (
-          <div>{item.name.common}</div>
+          <div className="task2Items" s>
+            {item.name.common}
+          </div>
         ))}
       </div>
     </div>

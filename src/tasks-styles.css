@@ -2,8 +2,13 @@
 }
 
 .btn {
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
+  border: none;
+}
+
+.addBtn {
+  background-color: green;
 }
 
 .deleteBtn {
@@ -27,4 +32,8 @@
 }
 
 .task2 {
+}
+
+.task2Items {
+  margin: 10px;
 }
