@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
 
 const ItemList = () => {
-  const [items, setItems] = useState([]);
+  const [countries, setCountries] = useState([]);
 
   // Added the Items dependency
   // Tried running just the link in the browser but it was not opening
+  // I tried a different API - a countries API
   useEffect(() => {
-    fetch("https://api.example.com/items")
+    fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
-      .then((data) => setItems(data))
+      .then((data) => setCountries(data))
       .catch((error) => console.error("Error fetching items:", error));
-  }, [items]);
+  }, [countries]);
 
   return (
     <div>
-      <h2>Item List</h2>
-      <ul>
-        {items.map((item) => (
-          <li>{item.name}</li>
+      <h2>Country List</h2>
+      <div>
+        {countries.map((item) => (
+          <div>{item.name.common}</div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
