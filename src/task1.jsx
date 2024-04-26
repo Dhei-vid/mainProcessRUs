@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const todoTasks = [
   {
@@ -10,7 +10,7 @@ const todoTasks = [
     title: "Task 2",
   },
   {
-    id: 1,
+    id: 3,
     title: "Task 3",
   },
 ];
@@ -23,18 +23,18 @@ const Task1 = () => {
 
   useEffect(() => {
     setTasks(todoTasks);
-  }, [todoTasks]);
+  }, []);
 
   const addTask = () => {
     if (newTask.trim() !== "") {
-      setTasks([...tasks, { id: Date.now(), text: newTask }]);
+      setTasks([...tasks, { id: Date.now(), title: newTask }]);
       setNewTask("");
     }
   };
 
   const updateTask = (taskId) => {
     const updatedTasks = tasks.map((task) =>
-      task.id === taskId ? { ...task, text: editedTaskText } : task
+      task.id === taskId ? { ...task, title: editedTaskText } : task
     );
     setTasks(updatedTasks);
     setEditingTaskId(null);
@@ -60,6 +60,7 @@ const Task1 = () => {
       <div>
         {tasks.map((task) => (
           <div key={task.id}>
+            <div>{task.title}</div>
             {editingTaskId === task.id ? (
               <>
                 <input
@@ -71,7 +72,7 @@ const Task1 = () => {
               </>
             ) : (
               <>
-                {task.text}
+                {task.title}
                 <button onClick={() => setEditingTaskId(task.id)}>Edit</button>
                 <button onClick={() => deleteTask(task.id)}>Delete</button>
               </>
